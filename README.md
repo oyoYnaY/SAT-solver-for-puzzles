@@ -33,7 +33,7 @@ I express the rules as formal logic constraints:
 **Row / Column count constraints**  
 For each row `i` and column `j`, the number of `True` in that row/column must match the given count.
 
-**pairing constraint**  
+**Pairing constraint**  
 If `pᵢⱼ` is `True`, there must exist a neighboring cell with a tree.
 For each **tree cell** `(i, j)`, there must exist **exactly one tent** orthogonally adjacent.
 
@@ -47,24 +47,26 @@ All these constraints are encoded into **Z3 SMT-LIB** format through Python.
 
 ---
 
-## Input Format (Example)
-Puzzle definition from text file:
-  2 1 1 2       
-1 . T . .
-1 . T T .
-1 . . . .
-0 . . . .
-1 . . T .
-1 . . . .
-1 T . . T
+## Input Format (Example 5*5)
+
+|     | 2  | 0  | 1  | 1  | 1  |
+|-----|----|----|----|----|----|
+| 1 | .  | T  | .  | .  | .  |
+| 2 | T  | .  | .  | T  | .  |
+| 1 | .  | .  | T  | .  | .  |
+| 0 | .  | .  | .  | .  | .  |
+| 1 | .  | .  | .  | .  | T  |
+
 
 ## Expected output format:
-       c1  c2  c3  c4  c5 
-r1:  X   T   .   .   .  
-r2:  T   .   X   T   X  
-r3:  X   .   T   .   .  
-r4:  .   .   .   .   .  
-r5:  .   .   .   X   T 
+
+|     | c1  | c2  | c3  | c4  | c5  |
+|-----|----|----|----|----|----|
+| r1 | X  | T  | .  | .  | .  |
+| r2 | T  | .  | X  | T  | X  |
+| r3 | X  | .  | T  | .  | .  |
+| r4 | .  | .  | .  | .  | .  |
+| r5 | .  | .  | .  | X  | T  |
 
 Legend:
 - `X`: Tent
