@@ -2,7 +2,7 @@
 
 A simple **Python solver for the "Tents and Trees" logic puzzle** using **constraint programming techniques** and **Z3 SMT solver**.
 
-This project demonstrates how to formalize grid-based puzzles into SAT/SMT problems and solve them programmatically. It is a minimal but complete example of encoding constraints into formal logic and using modern solvers.
+This project demonstrates how to formalize grid-based puzzles into SAT problems and solve them programmatically. It is a minimal but complete example of encoding constraints into formal logic and using modern solvers.
 
 ---
 
@@ -24,7 +24,7 @@ Each cell is assigned a boolean variable `pᵢⱼ`:
 - `pᵢⱼ = True` means this cell contains a **tent**
 - Otherwise, it is either empty or a tree.
 
-### Encode Constraints into SAT / SMT
+### Encode Constraints into SAT
 I express the rules as formal logic constraints:
 
 **Example formulas:**  
