@@ -77,6 +77,6 @@ Legend:
 
 ## Run solver
 ```bash
-python demo.py
+python3 demo.py
 
 
